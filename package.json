@@ -1,0 +1,26 @@
+{
+  "name": "vuepress-theme-sakura",
+  "version": "1.0.0",
+  "description": "Cyan Design theme for vuepress",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CyanH/vuepress-theme-sakura"
+  },
+  "keywords": [
+    "vuepress",
+    "theme",
+    "vuepress-theme",
+    "Cyan"
+  ],
+  "author": {
+    "name": "Cyan",
+    "email": "964334821@qq.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+  },
+  "dependencies": {
+    "vuepress": "1.0.2"
+  }
+}
