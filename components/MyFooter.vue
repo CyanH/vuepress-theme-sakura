@@ -3,7 +3,7 @@
     <span>{{$themeConfig.footer}}</span>
   </footer>
   <footer v-else>
-
+    
   </footer>
 </template>
 
