@@ -4,6 +4,7 @@
       <section class="shadow">
         <section class="content">
           <h1 class="title">{{data.userName}}</h1>
+          <nav></nav>
         </section>
       </section>
     </section>
@@ -21,12 +22,12 @@ export default {
 </script>
 
 <style>
-
 </style>
 
 
 <style lang="stylus" scoped>
-@import "../static/comfortaa.css"
+@import '../static/css/comfortaa.css'
+
 .splash
   width 100vw
   height 100vh
@@ -57,4 +58,7 @@ export default {
     margin-bottom 1.4rem
     color hsla(0, 0%, 100%, .8)
     font-size 6rem
+
+  nav
+    display flex
 </style>
