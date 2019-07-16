@@ -4,7 +4,13 @@
       <section class="shadow">
         <section class="content">
           <h1 class="title">{{data.userName}}</h1>
-          <nav></nav>
+          <nav>
+            <LinkItem
+              v-for="item in data.Splash"
+              :item="item"
+              :key="item.title"
+            ></LinkItem>
+          </nav>
         </section>
       </section>
     </section>
@@ -20,10 +26,6 @@ export default {
   }
 }
 </script>
-
-<style>
-</style>
-
 
 <style lang="stylus" scoped>
 @import '../static/css/comfortaa.css'
@@ -61,4 +63,6 @@ export default {
 
   nav
     display flex
+    @media only screen and (max-width: $MQMobileNarrow)
+      flex-direction column
 </style>
