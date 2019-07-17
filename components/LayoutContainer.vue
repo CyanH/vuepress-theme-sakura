@@ -1,3 +1,5 @@
 <template>
-    <div></div>
+  <div>
+    <NavBar @toggle-sidebar="$emit('toggle-sidebar')" />
+  </div>
 </template>

@@ -39,7 +39,7 @@ export default {
   background-position 50%
   width 100%
   height 100%
-  background-image url('../img/miku.jpg')
+  background-image url('../static/img/miku.jpg')
 
 .shadow
   background-color rgba(0, 0, 0, .7)

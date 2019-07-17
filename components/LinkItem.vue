@@ -20,7 +20,7 @@ export default {
 a
   color white
   font-size 1.8em
-  padding 0 .6em 1em
+  margin 0 .6em 1em
   color rgba(255, 255, 255, .65)
   transition all .6s
   cursor pointer

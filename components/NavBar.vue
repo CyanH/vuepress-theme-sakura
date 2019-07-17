@@ -1,20 +1,25 @@
 <template>
-    <header class="navbar">
-        <div class="nav-header">
-            <router-link :to="$localePath" class="home-link"></router-link>
-        </div>
-    </header>
+  <header class="navbar">
+    <div class="nav-header">
+      <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')" />
+      <router-link
+        :to="$localePath"
+        class="home-link"
+      ></router-link>
+    </div>
+  </header>
 </template>
 
 <script>
 export default {
-    
+
 }
 </script>
 
 
 <style lang="stylus" scoped>
 @import '../styles/config'
+
 .navbar
   position fixed
   z-index 20
@@ -24,7 +29,7 @@ export default {
   height $navbarHeight
   background-color #fff
   box-sizing border-box
-  border-bottom 1px solid rgba(0,0,0,0.25)
+  border-bottom 1px solid rgba(0, 0, 0, .25)
 
 .nav-header
   position relative

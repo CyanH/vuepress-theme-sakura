@@ -1,6 +1,6 @@
 <template>
-  <footer v-if="$themeConfig.footer" class="footer">
-    <span>{{$themeConfig.footer}}</span>
+  <footer v-if="$themeConfig.lastUpdated" class="footer">
+    <span>{{$themeConfig.lastUpdated}}</span>
   </footer>
   <footer v-else>
     
