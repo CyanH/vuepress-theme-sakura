@@ -1,7 +1,7 @@
 <template>
   <div>
     <LayoutContainer @toggle-sidebar="toggleSidebar" />
-    <!-- <SideBar></SideBar> -->
+    <SideBar :isSidebarOpen.sync="isSidebarOpen"></SideBar>
     <MyFooter></MyFooter>
   </div>
 </template>
@@ -17,6 +17,11 @@ export default {
     this.$router.afterEach(() => {
       this.isSidebarOpen = false
     })
+  },
+  methods: {
+    toggleSidebar () {
+      this.isSidebarOpen = !this.isSidebarOpen;
+    }
   }
 }
 </script>
