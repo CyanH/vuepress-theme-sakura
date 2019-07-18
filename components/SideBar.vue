@@ -18,7 +18,7 @@
         <div class="side-hander">
           <div
             class="bg"
-            :style="{backgroundImage:`url(${$themeConfig.sidebar.backgroundImage})`}"
+            :style="{backgroundImage:`url(${backgroundImage})`}"
           ></div>
           <img
             class="logo"
@@ -37,6 +37,19 @@
 export default {
   props: {
     isSidebarOpen: Boolean
+  },
+  computed: {
+    data () {
+      return this.$page.frontmatter
+    },
+    backgroundImage(){
+      const { themeConfig } = this.$site
+      if(themeConfig.sidebar.backgroundImage){
+        return themeConfig.sidebar.backgroundImage
+      }else{
+        return '../img/mir.jpg'
+      }
+    }
   }
 }
 </script>

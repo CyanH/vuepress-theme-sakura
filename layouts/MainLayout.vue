@@ -1,6 +1,6 @@
 <template>
   <section class="splash">
-    <section class="body" :style="{backgroundImage:`url(${$themeConfig.backgroundImage})`}">
+    <section class="body" :style="{backgroundImage:`url(${backgroundImage})`}">
       <section class="shadow">
         <section class="content">
           <h1 class="title">{{data.userName}}</h1>
@@ -22,6 +22,14 @@ export default {
   computed: {
     data () {
       return this.$page.frontmatter
+    },
+    backgroundImage(){
+      const { themeConfig } = this.$site
+      if(themeConfig.backgroundImage){
+        return themeConfig.backgroundImage
+      }else{
+        return '../img/mir.jpg'
+      }
     }
   }
 }

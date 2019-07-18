@@ -44,7 +44,7 @@ export default {
   width 100%
   height $navbarHeight
   line-height $navbarHeight
-  z-index 1
+  z-index 2
 
 @media (max-width: $MQMobile)
   .home-link
