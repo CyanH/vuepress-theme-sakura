@@ -2,7 +2,6 @@
   <div>
     <LayoutContainer @toggle-sidebar="toggleSidebar" />
     <SideBar :isSidebarOpen.sync="isSidebarOpen"></SideBar>
-    <MyFooter></MyFooter>
   </div>
 </template>
 

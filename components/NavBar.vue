@@ -5,14 +5,24 @@
       <router-link
         :to="$localePath"
         class="home-link"
-      ></router-link>
+      >
+        <img
+          class="logo"
+          v-if="$site.themeConfig.logo"
+          :src="$withBase($site.themeConfig.logo)"
+        >
+        <span
+          class="site-name"
+          v-if="$site.themeConfig.name"
+        >
+          {{ $site.themeConfig.name }}
+        </span>
+      </router-link>
     </div>
   </header>
 </template>
 
 <style lang="stylus" scoped>
-@import '../styles/config'
-
 .navbar
   position fixed
   top 0
@@ -29,6 +39,8 @@
   width 100%
   height $navbarHeight
   line-height $navbarHeight
+
+@media (max-width: $MQMobile)
+  .home-link
+    display none
 </style>
-
-
