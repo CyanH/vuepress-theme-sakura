@@ -7,7 +7,7 @@
   </footer>
 </template>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 @import '../styles/config.styl';
 .footer
   padding: 2%;

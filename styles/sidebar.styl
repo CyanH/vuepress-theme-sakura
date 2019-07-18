@@ -1,0 +1,63 @@
+.menu-mask
+  position fixed
+  top 0
+  left 0
+  bottom 0
+  right 0
+  z-index 10
+  background rgba(0, 0, 0, .5)
+
+.side-content
+  z-index 11
+  position fixed
+  width 250px
+  height 100%
+  background #fff
+
+.fade-enter-to, .fade-leave-to
+  transition opacity .3s
+
+.fade-enter, .fade-leave-to
+  opacity 0
+
+.slide-fade-enter-to, .slide-fade-leave-to
+  transition transform .3s
+  transform translate(0px, 0px)
+
+.slide-fade-enter, .slide-fade-leave-to
+  opacity 0
+  -webkit-transform translate(-286px, 0px)
+  transform translate(-286px, 0px)
+  -webkit-transition opacity .3s ease-in-out .3s, -webkit-transform .3s ease-in-out
+  transition opacity .3s ease-in-out .3s, transform .3s ease-in-out
+
+.side-hander
+  padding 40px 16px 20px
+  position relative
+
+  .bg
+    height 100%
+    width 100%
+    background-repeat repeat
+    background-position 50% 50%
+    background-size cover
+    position absolute
+    top 0
+    left 0
+    z-index -1
+
+  .logo
+    border-radius 50%
+    width 50px
+    margin-left 2px
+
+  .footer
+    padding-top 14px
+    line-height 19px
+    font-size 14.5px
+    color #fff
+    font-family -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif
+
+    b
+      font-weight 600
+      font-size 14px

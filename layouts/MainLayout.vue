@@ -1,6 +1,6 @@
 <template>
   <section class="splash">
-    <section class="body">
+    <section class="body" :style="{backgroundImage:`url(${$themeConfig.backgroundImage})`}">
       <section class="shadow">
         <section class="content">
           <h1 class="title">{{data.userName}}</h1>
@@ -39,7 +39,6 @@ export default {
   background-position 50%
   width 100%
   height 100%
-  background-image url('../static/img/miku.jpg')
 
 .shadow
   background-color rgba(0, 0, 0, .7)
