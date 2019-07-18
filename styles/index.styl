@@ -4,6 +4,7 @@
 @require './arrow'
 @require './wrapper'
 @require './toc'
+@require 'mobile.styl'
 
 html, body
   padding 0
@@ -20,146 +21,158 @@ body
   font-size 16px
   color $textColor
 
-.page
-  padding-left $sidebarWidth
+a
+  text-decoration none
 
-{$contentClass}:not(.custom)
-  @extend $wrapper
-  > *:first-child
-    margin-top $navbarHeight
+.navbar
+  position fixed
+  z-index 20
+  top 0
+  left 0
+  right 0
+  height $navbarHeight
+  box-sizing border-box
 
-  a:hover
-    text-decoration underline
+// .page
+//   padding-left $sidebarWidth
 
-  p.demo
-    padding 1rem 1.5rem
-    border 1px solid #ddd
-    border-radius 4px
+// {$contentClass}:not(.custom)
+//   @extend $wrapper
+//   > *:first-child
+//     margin-top $navbarHeight
 
-  img
-    max-width 100%
+//   a:hover
+//     text-decoration underline
 
-{$contentClass}.custom
-  padding 0
-  margin 0
+//   p.demo
+//     padding 1rem 1.5rem
+//     border 1px solid #ddd
+//     border-radius 4px
 
-  img
-    max-width 100%
+//   img
+//     max-width 100%
 
-p a code
-  font-weight 400
-  color $accentColor
+// {$contentClass}.custom
+//   padding 0
+//   margin 0
 
-kbd
-  background #eee
-  border solid 0.15rem #ddd
-  border-bottom solid 0.25rem #ddd
-  border-radius 0.15rem
-  padding 0 0.15em
+//   img
+//     max-width 100%
 
-blockquote
-  font-size .9rem
-  color #999
-  border-left .5rem solid #dfe2e5
-  margin 0.5rem 0
-  padding .25rem 0 .25rem 1rem
+// p a code
+//   font-weight 400
+//   color $accentColor
 
-  & > p
-    margin 0
+// kbd
+//   background #eee
+//   border solid 0.15rem #ddd
+//   border-bottom solid 0.25rem #ddd
+//   border-radius 0.15rem
+//   padding 0 0.15em
 
-ul, ol
-  padding-left 1.2em
+// blockquote
+//   font-size .9rem
+//   color #999
+//   border-left .5rem solid #dfe2e5
+//   margin 0.5rem 0
+//   padding .25rem 0 .25rem 1rem
 
-strong
-  font-weight 600
+//   & > p
+//     margin 0
 
-h1, h2, h3, h4, h5, h6
-  font-weight 400
-  line-height 1.2
+// ul, ol
+//   padding-left 1.2em
 
-  {$contentClass}:not(.custom) > &
-    margin-top (0.5rem - $navbarHeight)
-    padding-top ($navbarHeight + 1rem)
-    margin-bottom 0
+// strong
+//   font-weight 600
 
-    &:first-child
-      margin-top -1.5rem
-      margin-bottom 1rem
+// h1, h2, h3, h4, h5, h6
+//   font-weight 400
+//   line-height 1.2
 
-      + p, + pre, + .custom-block
-        margin-top 2rem
+//   {$contentClass}:not(.custom) > &
+//     margin-top (0.5rem - $navbarHeight)
+//     padding-top ($navbarHeight + 1rem)
+//     margin-bottom 0
 
-  &:hover .header-anchor
-    opacity: 1
+//     &:first-child
+//       margin-top -1.5rem
+//       margin-bottom 1rem
 
-h1
-  font-size 2.2rem
+//       + p, + pre, + .custom-block
+//         margin-top 2rem
 
-h2
-  font-size 1.65rem
-  padding-bottom .3rem
-  border-bottom 1px solid $borderColor
+//   &:hover .header-anchor
+//     opacity: 1
 
-h3
-  font-size 1.35rem
+// h1
+//   font-size 2.2rem
 
-a.header-anchor
-  font-size 0.85em
-  float left
-  margin-left -0.87em
-  padding-right 0.23em
-  margin-top 0.125em
-  opacity 0
+// h2
+//   font-size 1.65rem
+//   padding-bottom .3rem
+//   border-bottom 1px solid $borderColor
 
-  &:hover
-    text-decoration none
+// h3
+//   font-size 1.35rem
 
-code, kbd, .line-number
-  font-family source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace
+// a.header-anchor
+//   font-size 0.85em
+//   float left
+//   margin-left -0.87em
+//   padding-right 0.23em
+//   margin-top 0.125em
+//   opacity 0
 
-p, ul, ol
-  line-height 1.7
+//   &:hover
+//     text-decoration none
 
-hr
-  border 0
-  border-top 1px solid $borderColor
+// code, kbd, .line-number
+//   font-family source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace
 
-table
-  border-collapse collapse
-  margin 1rem 0
-  display: block
-  overflow-x: auto
+// p, ul, ol
+//   line-height 1.7
 
-tr
-  border-top 1px solid #dfe2e5
+// hr
+//   border 0
+//   border-top 1px solid $borderColor
 
-  &:nth-child(2n)
-    background-color #f6f8fa
+// table
+//   border-collapse collapse
+//   margin 1rem 0
+//   display: block
+//   overflow-x: auto
 
-th, td
-  border 1px solid #dfe2e5
-  padding .6em 1em
+// tr
+//   border-top 1px solid #dfe2e5
 
-.theme-container
-  &.sidebar-open
-    .sidebar-mask
-      display: block
+//   &:nth-child(2n)
+//     background-color #f6f8fa
 
-  &.no-navbar
-    {$contentClass}:not(.custom) > h1, h2, h3, h4, h5, h6
-      margin-top 1.5rem
-      padding-top 0
+// th, td
+//   border 1px solid #dfe2e5
+//   padding .6em 1em
 
-    .sidebar
-      top 0
+// .theme-container
+//   &.sidebar-open
+//     .sidebar-mask
+//       display: block
+
+//   &.no-navbar
+//     {$contentClass}:not(.custom) > h1, h2, h3, h4, h5, h6
+//       margin-top 1.5rem
+//       padding-top 0
+
+//     .sidebar
+//       top 0
 
 
-@media (min-width: ($MQMobile + 1px))
-  .theme-container.no-sidebar
-    .sidebar
-      display none
+// @media (min-width: ($MQMobile + 1px))
+//   .theme-container.no-sidebar
+//     .sidebar
+//       display none
 
-    .page
-      padding-left 0
+//     .page
+//       padding-left 0
 
-@require 'mobile.styl'
+
