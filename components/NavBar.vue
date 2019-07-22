@@ -55,8 +55,13 @@ export default {
 .nav-background
   position absolute
   width 100%
-  height 270px
-  top 0
+  height 400px
+  top $navbarHeight
+  transition all .45s
+
+  @media (max-width: $MQMobile)
+    top 0
+    height 270px
 
   .bgImg
     position absolute
@@ -69,5 +74,4 @@ export default {
     background-size cover
     background-origin padding-box
     background-attachment scroll
-    transition all .45s
 </style>
