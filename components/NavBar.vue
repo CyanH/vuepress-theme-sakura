@@ -3,14 +3,9 @@
     <div class="nav-header">
       <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')" />
       <router-link
-        :to="$localePath"
+        :to="$page"
         class="home-link"
       >
-        <img
-          class="logo"
-          v-if="$site.themeConfig.logo"
-          :src="$withBase($site.themeConfig.logo)"
-        >
         <span
           class="site-name"
           v-if="$site.themeConfig.name"
@@ -20,7 +15,10 @@
       </router-link>
     </div>
     <div class="nav-background">
-      <div class="bgImg" :style="{backgroundImage:`url(${data.heroImage})`}"></div>
+      <div
+        class="bgImg"
+        :style="{backgroundImage:`url(${backgroundImage})`}"
+      ></div>
     </div>
   </header>
 </template>
@@ -28,8 +26,12 @@
 <script>
 export default {
   computed: {
-    data () {
-      return this.$page.frontmatter
+    backgroundImage () {
+      if (this.$page.frontmatter) {
+        return this.$page.frontmatter.backgroundImage
+      } else {
+        return '../static/img/i_miku.jpg'
+      }
     }
   }
 }
@@ -57,15 +59,15 @@ export default {
   top 0
 
   .bgImg
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-repeat: repeat;
-    background-position: 50% 50%;
-    background-size: cover;
-    background-origin: padding-box;
-    background-attachment: scroll;
-    transition: all .45s;
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    background-repeat repeat
+    background-position 50% 50%
+    background-size cover
+    background-origin padding-box
+    background-attachment scroll
+    transition all .45s
 </style>
