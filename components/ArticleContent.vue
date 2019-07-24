@@ -17,13 +17,19 @@
         <router-link
           v-for="(item,index) in posts"
           :key="index"
+          :to="item.path"
         >
           <article
-            class="post-list-thumb"
+            class="post-list-thumb post-list-show"
             :class="{'post-list-thumb-left':index%2==0}"
           >
-            <div class="post-thumb">{{item.name}}</div>
-            <div class="post-content-wrap" v-html="item.excerpt"></div>
+            <div class="post-thumb">
+              <img :src="item.frontmatter.backgroundImage">
+            </div>
+            <div
+              class="post-content-wrap"
+            ></div>
+            <Content class="theme-default-content custom"/>
           </article>
         </router-link>
       </main>
@@ -39,18 +45,19 @@ export default {
       let posts = this.$site.pages
       posts = posts.filter(item => {
         const { type, date } = item.frontmatter
-        if(type && type == 'post' && date){
-          return
+        if (type && type == 'post' && date) {
+          return item
         }
       })
-      posts.sort((a, b) => {
-        return this.getTimeNum(b) - this.getTimeNum(a)
-      })
+      // posts.sort((a, b) => {
+      //   return this.getTimeNum(b) - this.getTimeNum(a)
+      // })
       return posts
     }
   },
-  methods:{
-    getTimeNum(date){
+  methods: {
+    getTimeNum (data) {
+      debugger
       return parseInt(new Date(data.frontmatter.date).getTime())
     }
   }
@@ -74,4 +81,20 @@ export default {
       margin 0 auto
       border 2px solid #fff
       display block
+
+.post-list-show
+  animation post-list-show .5s
+  opacity 1
+
+.post-list-thumb
+  float left
+  width 100%
+  height 300px
+  position relative
+  margin 20px 0 20px
+  border-radius 10px
+  background-color rgba(255, 255, 255, 0)
+  box-shadow 0 1px 20px -6px rgba(0, 0, 0, .5)
+  opacity 0
+  transition box-shadow .3s ease
 </style>
