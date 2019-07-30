@@ -1,9 +1,11 @@
 <template>
-<div>
-  <NavBar @toggle-sidebar="toggleSidebar" />
-  <List />
-<SideBar :isSidebarOpen.sync="isSidebarOpen"></SideBar>
-</div>
+  <div>
+    <NavBar @toggle-sidebar="toggleSidebar" />
+    <div class="content">
+      <List />
+    </div>
+    <SideBar :isSidebarOpen.sync="isSidebarOpen"></SideBar>
+  </div>
 </template>
 
 
@@ -28,3 +30,6 @@ export default {
 </script>
 
 
+<style lang="stylus" scoped>
+
+</style>

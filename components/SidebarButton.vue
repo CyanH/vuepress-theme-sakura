@@ -9,13 +9,12 @@
 <style lang="stylus">
 .sidebar-button
   display none
-  position absolute
   padding 0.6rem
   top 0.6rem
+  color #fff
   .icon
-    display block
-    width 1.5rem
-    height 1.5rem
+    width 1.6rem
+    height 1.6rem
 
 @media (max-width: $MQMobile)
   .sidebar-button

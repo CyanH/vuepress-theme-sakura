@@ -1,11 +1,5 @@
 <template>
   <div class="site-content">
-    <div class="head">
-      <img
-        class="head-img"
-        :src="$themeConfig.logo"
-      >
-    </div>
     <div class="content-area">
       <main
         class="site-main"
@@ -32,7 +26,6 @@
             <div class="post-content-wrap"></div>
           </article>
         </router-link>
-        <Content class="theme-default-content custom" />
       </main>
     </div>
   </div>
@@ -75,18 +68,6 @@ export default {
   margin 0 auto
   z-index 3
 
-  .head
-    .head-img
-      border-radius 50%
-      width 100px
-      margin 0 auto
-      border 2px solid #fff
-      display block
-
-.post-list-show
-  animation post-list-show .5s
-  opacity 1
-
 .post-list-thumb
   float left
   width 100%
@@ -96,6 +77,17 @@ export default {
   border-radius 10px
   background-color rgba(255, 255, 255, 0)
   box-shadow 0 1px 20px -6px rgba(0, 0, 0, .5)
-  // opacity 0
+  opacity 0
   transition box-shadow .3s ease
+
+.post-list-show
+  animation post-list-show .5s
+  opacity 1
+
+.post-thumb
+  float right
+  width 55%
+
+.post-list-thumb-left .post-thumb
+  float left
 </style>

@@ -1,26 +1,37 @@
 <template>
-  <header class="navbar">
+  <div>
     <div class="nav-header">
-      <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')" />
-      <router-link
-        :to="$page"
-        class="home-link"
-      >
-        <span
-          class="site-name"
-          v-if="$site.themeConfig.name"
+      <div class="header">
+        <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')" />
+        <router-link
+          :to="$page"
+          class="home-link"
         >
-          {{ $site.themeConfig.name }}
-        </span>
-      </router-link>
+          <span
+            class="site-name"
+            v-if="$site.themeConfig.name"
+          >
+            {{ $site.themeConfig.name }}
+          </span>
+        </router-link>
+
+      </div>
     </div>
-    <div class="nav-background">
-      <div
-        class="bgImg"
-        :style="{backgroundImage:`url(${backgroundImage})`}"
-      ></div>
+    <div>
+      <div class="nav-background">
+        <div
+          class="bgImg"
+          :style="{backgroundImage:`url(${backgroundImage})`}"
+        ></div>
+      </div>
     </div>
-  </header>
+    <div class="head">
+      <img
+        class="head-img"
+        :src="$themeConfig.logo"
+      >
+    </div>
+  </div>
 </template>
 
 <script>
@@ -39,28 +50,36 @@ export default {
 
 <style lang="stylus" scoped>
 .nav-header
-  position relative
-  color #fff
-  padding 0 1rem
-  margin 0 auto
+  position fixed
+  top 0
   width 100%
-  height $navbarHeight
-  line-height $navbarHeight
-  z-index 2
+  z-index 10
 
-@media (max-width: $MQMobile)
-  .home-link
-    display none
+  .header
+    position relative
+    padding 10px
+
+    @media (max-width: $MQMobile)
+      .home-link
+        display none
+
+    .site-name
+      height 54px
+      line-height 24px
+      font-size 28px
+      opacity 1
+      background-color rgba(0, 0, 0, 0)
+      text-shadow 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF
 
 .nav-background
   position absolute
+  top 0
+  opacity 0
   width 100%
-  height 400px
-  top $navbarHeight
   transition all .45s
 
   @media (max-width: $MQMobile)
-    top 0
+    opacity 1
     height 270px
 
   .bgImg
@@ -74,4 +93,16 @@ export default {
     background-size cover
     background-origin padding-box
     background-attachment scroll
+
+.head
+  position relative
+  padding-top 220px
+  z-index 1
+
+  .head-img
+    border-radius 50%
+    width 100px
+    margin 0 auto
+    border 2px solid #fff
+    display block
 </style>
