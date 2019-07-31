@@ -18,12 +18,16 @@
             :class="{'post-list-thumb-left':index%2==0}"
           >
             <div class="post-thumb">
-              <img
-                style="width:100%"
-                :src="item.frontmatter.backgroundImage"
-              >
+              <img :src="item.frontmatter.backgroundImage">
             </div>
-            <div class="post-content-wrap"></div>
+            <div class="post-content-wrap">
+              <div class="post-content">
+                <div class="post-date">
+                  时间
+                </div>
+                <div>标题</div>
+              </div>
+            </div>
           </article>
         </router-link>
       </main>
@@ -77,7 +81,6 @@ export default {
   border-radius 10px
   background-color rgba(255, 255, 255, 0)
   box-shadow 0 1px 20px -6px rgba(0, 0, 0, .5)
-  opacity 0
   transition box-shadow .3s ease
 
 .post-list-show
@@ -88,6 +91,30 @@ export default {
   float right
   width 55%
 
+  @media (max-width: $MQMobile)
+    width 100%
+
+  img
+    width 100%
+    height 300px
+    object-fit cover
+
+    @media (max-width: $MQMobile)
+      border-radius 10px 10px 0 0
+      height 210px
+
+    @media (min-width: $MQMobile + 1px)
+      border-radius 10px 0 0 10px
+
 .post-list-thumb-left .post-thumb
   float left
+
+.post-content-wrap
+  position relative
+  display inline-block
+  float right
+  padding-right 30px
+  padding-left 0
+  width 40%
+  margin 20px 10px 0
 </style>
