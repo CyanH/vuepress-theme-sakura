@@ -8,28 +8,27 @@
         <h1 class="main-title">
           Discovery
         </h1>
-        <router-link
+        <article
           v-for="(item,index) in posts"
           :key="index"
-          :to="item.path"
+          class="post-list-thumb post-list-show"
+          :class="{'post-list-thumb-left':index%2==0}"
         >
-          <article
-            class="post-list-thumb post-list-show"
-            :class="{'post-list-thumb-left':index%2==0}"
-          >
-            <div class="post-thumb">
+          <div class="post-thumb">
+            <router-link :to="item.path">
               <img :src="item.frontmatter.backgroundImage">
-            </div>
-            <div class="post-content-wrap">
-              <div class="post-content">
-                <div class="post-date">
-                  时间
-                </div>
-                <div>标题</div>
+            </router-link>
+          </div>
+          <div class="post-content-wrap">
+            <div class="post-content">
+              <div class="post-date">
+                时间
               </div>
+              <div>标题</div>
+              <div>概述</div>
             </div>
-          </article>
-        </router-link>
+          </div>
+        </article>
       </main>
     </div>
   </div>
@@ -85,7 +84,6 @@ export default {
 
 .post-list-show
   animation post-list-show .5s
-  opacity 1
 
 .post-thumb
   float right
@@ -94,20 +92,27 @@ export default {
   @media (max-width: $MQMobile)
     width 100%
 
-  img
-    width 100%
+  a
     height 300px
-    object-fit cover
+    position relative
+    display block
+    overflow hidden
+    border-radius 0 10px 10px 0
 
     @media (max-width: $MQMobile)
-      border-radius 10px 10px 0 0
+      border-radius 10px 10px 0 0 !important
       height 210px
 
-    @media (min-width: $MQMobile + 1px)
-      border-radius 10px 0 0 10px
+    img
+      width 100%
+      height 100%
+      object-fit cover
 
 .post-list-thumb-left .post-thumb
   float left
+
+  a
+    border-radius 10px 0 0 10px
 
 .post-content-wrap
   position relative
