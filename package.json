@@ -21,6 +21,7 @@
   "devDependencies": {
   },
   "dependencies": {
-    "vuepress": "1.0.2"
+    "vuepress": "1.0.2",
+    "svg-sprite-loader": "3.8.0"
   }
 }

@@ -19,7 +19,7 @@
   </div>
 </template>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 .sidebar-button
   display none
   padding .6rem

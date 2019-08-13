@@ -28,6 +28,7 @@
             <b>{{$themeConfig.name}}</b>
             <br>{{$themeConfig.description}}</footer>
         </div>
+        <SidebarLink />
       </div>    
     </transition>
   </div>
