@@ -19,9 +19,9 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "svg-sprite-loader": "^4.1.6"
   },
   "dependencies": {
-    "vuepress": "1.0.2",
-    "svg-sprite-loader": "3.8.0"
+    "vuepress": "1.0.2"
   }
 }

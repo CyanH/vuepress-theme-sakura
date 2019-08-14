@@ -1,6 +1,6 @@
 <template>
   <section class="splash">
-    <section class="body" :style="{backgroundImage:`url(${backgroundImage})`}">
+    <section class="body" :style="{backgroundImage:`url(${'/sakura'+backgroundImage})`}">
       <section class="shadow">
         <section class="content">
           <h1 class="title">{{data.userName}}</h1>
@@ -28,7 +28,7 @@ export default {
       if(themeConfig.backgroundImage){
         return themeConfig.backgroundImage
       }else{
-        return '../img/mir.jpg'
+        return '/img/mir.jpg'
       }
     }
   }

@@ -1,1 +1,1 @@
-import 'static/icons'
+import 'static/icons';
