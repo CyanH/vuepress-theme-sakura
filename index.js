@@ -8,23 +8,22 @@ module.exports = {
       {
         componentsDir: [path.resolve(__dirname, 'components')]
       }
-    ],
-    'svg-sprite-loader'
+    ]
   ],
   enhanceAppFiles: path.resolve(__dirname, 'enhanceApp.js'),
   alias: {
     static: path.resolve(__dirname, 'static'),
     components: path.resolve(__dirname, 'components')
   },
-  chainWebpack(config) {
+  chainWebpack:config=> {
     config.module
       .rule('svg')
-      .exclude.add(path.resolve('./static/icons'))
+      .exclude.add(path.resolve('static/icons'))
       .end();
     config.module
       .rule('icons')
       .test(/\.svg$/)
-      .include.add(path.resolve('./static/icons'))
+      .include.add(path.resolve('static/icons'))
       .end()
       .use('svg-sprite-loader')
       .loader('svg-sprite-loader')

@@ -26,6 +26,7 @@
         class="drawer-hr"
       >
       </hr>
+      <el-button type="primary">测试</el-button>
     </div>
   </div>
 </template>
