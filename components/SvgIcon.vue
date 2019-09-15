@@ -1,6 +1,10 @@
 <template>
-  <svg :class="svgClass" aria-hidden="true">
-    <use :xlink:href="iconName"/>
+  <svg
+    class="icon"
+    :class="`icon-${iconSize}`"
+    @click="iconClick"
+  >
+    <use :xlink:href="`#icon-${iconName}`"></use>
   </svg>
 </template>
 
@@ -8,36 +12,39 @@
 export default {
   name: 'SvgIcon',
   props: {
-    iconClass: {
-      type: String,
-      required: true
+    iconName: {
+      type: String
     },
-    className: {
+    iconSize: {
       type: String,
-      default: ''
+      validator (value) {
+        return [
+          'small',
+          'medium',
+          'large'
+        ].indexOf(value) > -1
+      }
     }
   },
-  computed: {
-    iconName() {
-      return `#icon-${this.iconClass}`
-    },
-    svgClass() {
-      if (this.className) {
-        return 'svg-icon ' + this.className
-      } else {
-        return 'svg-icon'
-      }
+  methods: {
+    iconClick (event) {
+      this.$emit('click', event)
     }
   }
 }
 </script>
 
-<style scoped>
-.svg-icon {
-  width: 1em;
-  height: 1em;
-  vertical-align: -0.15em;
-  fill: currentColor;
-  overflow: hidden;
-}
+<style lang="stylus" scoped>
+.icon
+  &.icon-small
+    width 1.5em
+    height 1.5em
+
+  &.icon-medium
+    width 2.8em
+    height 2.8em
+
+  &.icon-large
+    width 3.8em
+    height 3.8em
 </style>

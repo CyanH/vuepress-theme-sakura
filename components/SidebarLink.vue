@@ -8,25 +8,18 @@
         v-if="item.type !== 'hr'"
         class="list-item"
       >
-        <svg
-          v-if="item.icon.type === 'svg'"
-          class="svg"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
-          role="img"
-          viewBox="0 0 1024 1024"
-          v-html="item.icon.data"
+        <svg-icon
+        style="margin:0 5px"
+          :icon-name="item.icon"
+          icon-size="small"
         />
-        <svg-icon icon-class="system" />
-        <!-- <i v-else :class="`${item.icon}`" /> -->
-        <span>{{item.title}}</span>
+        <span style="padding-left:20px">{{item.title}}</span>
       </div>
       <hr
         v-else
         class="drawer-hr"
       >
       </hr>
-      <el-button type="primary">测试</el-button>
     </div>
   </div>
 </template>
@@ -44,17 +37,14 @@ export default {
 <style lang="stylus" scoped>
 .list-item
   position relative
+  display flex
+  align-items center
+  padding 12px 16px
+  cursor pointer
 
-.svg
-  display block
-  color rgba(0, 0, 0, .87)
-  fill rgb(117, 117, 117)
-  height 24px
-  width 24px
-  user-select none
-  transition all 450ms cubic-bezier(.23, 1, .32, 1) 0ms
-  position absolute
-  top 0px
-  margin 12px
-  left 4px
+hr
+  margin 5px 0
+  height 1px
+  border none
+  background-color #e0e0e0
 </style>

@@ -1,6 +1,6 @@
 <template>
   <section class="splash">
-    <section class="body" :style="{backgroundImage:`url(${'/sakura'+backgroundImage})`}">
+    <section class="body" :style="{backgroundImage:`url(${backgroundImage})`}">
       <section class="shadow">
         <section class="content">
           <h1 class="title">{{data.userName}}</h1>
