@@ -14,7 +14,6 @@
             {{ $site.themeConfig.name }}
           </span>
         </router-link>
-
       </div>
     </div>
     <div>
@@ -41,7 +40,7 @@ export default {
       if (this.$page.frontmatter) {
         return this.$page.frontmatter.backgroundImage
       } else {
-        return '../static/img/i_miku.jpg'
+        return '/img/i_miku.jpg'
       }
     }
   }

@@ -18,7 +18,6 @@ export default {
 
 <style lang="stylus" scoped>
 a
-  color white
   font-size 1.8em
   margin 0 .6em 1em
   color rgba(255, 255, 255, .65)

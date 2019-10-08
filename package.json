@@ -18,9 +18,6 @@
     "email": "964334821@qq.com"
   },
   "license": "MIT",
-  "devDependencies": {
-    "svg-sprite-loader": "^4.1.6"
-  },
   "dependencies": {
     "vuepress": "1.0.2"
   }

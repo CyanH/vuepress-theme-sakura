@@ -1,9 +1,9 @@
 <template>
-  <div class="sidebar">
-    <transition
-      name="fade"
-      @touchmove.stop.prevent
-    >
+  <div
+    class="sidebar"
+    @touchmove.prevent
+  >
+    <transition name="fade">
       <div
         class="menu-mask"
         v-show="isSidebarOpen"
@@ -43,12 +43,12 @@ export default {
     data () {
       return this.$page.frontmatter
     },
-    backgroundImage(){
+    backgroundImage () {
       const { themeConfig } = this.$site
-      if(themeConfig.sidebar.backgroundImage){
+      if (themeConfig.sidebar.backgroundImage) {
         return themeConfig.sidebar.backgroundImage
-      }else{
-        return '../img/mir.jpg'
+      } else {
+        return '/img/mir.jpg'
       }
     }
   }
